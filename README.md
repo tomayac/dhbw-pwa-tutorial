@@ -1,4 +1,6 @@
-# PWA & Project Fugu Workshop
+![DHBW logo](https://user-images.githubusercontent.com/145676/100640206-72128900-3336-11eb-9867-6492464d3981.png)
+
+# DHBW PWA & Project Fugu Workshop
 
 Progressive Web Apps are a great cross-platform application model, even if somewhat restricted in use—until now, that is. Project Fugu is an initiative led by Google, Microsoft, and Intel. Their goal: a more capable web. Home screen shortcuts, clipboard and file system access are only a few examples of Fugu’s powerful APIs. Are you ready to superpower your Progressive Web App?
 
