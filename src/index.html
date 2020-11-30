@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DHBW PWA Tutorial</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <nav>
+      <button type="button" id="clear">Clear Canvas</button>
+      <button type="button" id="open">Open File</button>
+      <button type="button" id="save">Save File</button>
+      <button type="button" id="copy">Copy Image</button>
+      <button type="button" id="paste">Paste Image</button>
+      <button type="button" id="share">Share Image</button>
+      <input type="color" id="color" />
+    </nav>
+    <canvas id="canvas" width="600" height="480"></canvas>
+    <details>
+      <summary>Task list</summary>
+      <ul>
+        <li>
+          (ToDo) Progressive Web Apps
+          <ul>
+            <li>Service Worker</li>
+            <li>Web App Manifest</li>
+            <li>Manifest Shortcuts</li>
+          </ul>
+        </li>
+        <li>
+          (ToDo) Project Fugu APIs
+          <ul>
+            <li>Web Share API</li>
+            <li>File System Access API</li>
+            <li>Async Clipboard API</li>
+            <li>File Handling API</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

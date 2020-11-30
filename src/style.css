@@ -1,0 +1,27 @@
+:root {
+  color-scheme: dark light;
+  font-family: system-ui, sans-serif;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+}
+
+canvas {
+  touch-action: none;
+  border: solid 1px CanvasText;
+}
+
+details {
+  cursor: pointer;
+}
