@@ -97,6 +97,32 @@ btnOpen.addEventListener('click', async () => {
   }
 });
 
+const btnCopy = document.querySelector('#copy');
+btnCopy.disabled = !(
+  'clipboard' in navigator && 'write' in navigator.clipboard
+);
+btnCopy.addEventListener('click', async () => {
+  const blob = await toBlob(canvas);
+  await navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
+});
+
+const btnPaste = document.querySelector('#paste');
+btnPaste.disabled = !(
+  'clipboard' in navigator && 'read' in navigator.clipboard
+);
+btnPaste.addEventListener('click', async () => {
+  const clipboardItems = await navigator.clipboard.read();
+  for (const clipboardItem of clipboardItems) {
+    for (const type of clipboardItem.types) {
+      if (type === 'image/png') {
+        const blob = await clipboardItem.getType(type);
+        const image = await getImage(blob);
+        ctx.drawImage(image, 0, 0);
+      }
+    }
+  }
+});
+
 window.addEventListener('load', async () => {
   if ('serviceWorker' in navigator) {
     const registration = await navigator.serviceWorker.register('sw.js');
