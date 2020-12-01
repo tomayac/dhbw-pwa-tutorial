@@ -1,0 +1,19 @@
+{
+  "name": "Paint",
+  "short_name": "Paint",
+  "display": "standalone",
+  "theme_color": "#000080",
+  "background_color": "#808080",
+  "start_url": ".",
+  "scope": ".",
+  "icons": [{ "src": "icon.png", "sizes": "512x512" }],
+  "shortcuts": [
+    {
+      "name": "About Paint",
+      "short_name": "About",
+      "description": "See who made this",
+      "url": "about.html?utm_source=homescreen",
+      "icons": [{ "src": "icon.png", "sizes": "512x512" }]
+    }
+  ]
+}

@@ -5,9 +5,15 @@ const ctx = canvas.getContext('2d', {
   desynchronized: true,
 });
 
-ctx.fillStyle = 'white';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-ctx.fillStyle = 'black';
+const clear = () => {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'black';
+};
+clear();
+
+const btnClear =document.querySelector('#clear');
+btnClear.addEventListener('click', clear);
 
 let previousPoint = null;
 canvas.addEventListener('pointerdown', (event) => {
@@ -36,8 +42,9 @@ txtColor.addEventListener('change', () => {
   ctx.fillStyle = txtColor.value;
 });
 
-document.querySelectorAll('button').forEach((button) =>
-  button.addEventListener('click', (e) => {
-    alert(`Implement the "${e.target.textContent}" feature!`);
-  })
-);
+window.addEventListener('load', async () => {
+    if ('serviceWorker' in navigator) {
+        const registration = await navigator.serviceWorker.register('sw.js');
+        console.log(`Service worker registered for ${registration.scope}.`);
+    }
+});
