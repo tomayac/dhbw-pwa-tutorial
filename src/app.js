@@ -123,6 +123,17 @@ btnPaste.addEventListener('click', async () => {
   }
 });
 
+const btnShare = document.querySelector('#share');
+btnShare.disabled = !('canShare' in navigator);
+btnShare.addEventListener('click', async () => {
+  const blob = await toBlob(canvas);
+  const file = new File([blob], 'untitled.png', { type: 'image/png' });
+  const item = { files: [file], title: 'untitled.png' };
+  if (navigator.canShare(item)) {
+    await navigator.share(item);
+  }
+});
+
 window.addEventListener('load', async () => {
   if ('serviceWorker' in navigator) {
     const registration = await navigator.serviceWorker.register('sw.js');
